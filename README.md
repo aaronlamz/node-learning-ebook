@@ -1,9 +1,9 @@
 # node-weekly
 <div align="center">
-  <img src="https://nodejs.org/static/images/logo.svg" width="122" height="75">
-  <h2>Node Weekly</h2>
+  <img src="https://nodejs.org/static/images/logo.svg" width="200">
 </div>
-> ☘️ NodeJS 每周技术分享
+
+##  ☘️ NodeJS 每周技术分享
 
 ## 目录
 | # | Title | Tags  | Date |
