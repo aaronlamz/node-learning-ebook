@@ -6,4 +6,10 @@
 </div>
 
 ## 简介
-逗号分隔值（Comma separated values），
+逗号分隔值文件格式（Comma separated values），也就是我们所熟知的CVS，
+
+## CVS文件是什么？
+
+## 如何用Node处理CVS文件
+
+## 小结
