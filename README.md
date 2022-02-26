@@ -1,5 +1,5 @@
 # node-weekly
-<div align="center">
+<div align="center" style="background:#333;">
   <img src="https://nodejs.org/static/images/logo.svg" width="200">
 </div>
 
