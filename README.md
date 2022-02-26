@@ -1,7 +1,7 @@
 # node-weekly
 
 <div align="center" bgColor="#ccc">
-  <img src="https://nodejs.org/static/images/logo.svg" width="200">
+  <img src="node.png">
 </div>
 
 ##  ☘️ NodeJS 每周技术分享
