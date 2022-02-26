@@ -1,9 +1,4 @@
 # node-weekly
-<style>
-  div {
-    background:"#ccc"
-  }
-</style>
 
 <div align="center" bgColor="#ccc">
   <img src="https://nodejs.org/static/images/logo.svg" width="200">
