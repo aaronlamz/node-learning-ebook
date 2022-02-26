@@ -6,7 +6,7 @@
 </div>
 
 ## 简介
-逗号分隔值文件格式（Comma separated values），也就是我们所熟知的CVS，
+逗号分隔值文件格式（Comma separated values），也就是我们所熟知的CSV，
 
 ## CVS文件是什么？
 
