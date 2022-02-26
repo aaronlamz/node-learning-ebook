@@ -8,8 +8,8 @@
 ## 简介
 逗号分隔值文件格式（Comma separated values），也就是我们所熟知的CSV，
 
-## CVS文件是什么？
+## CSV文件是什么？
 
-## 如何用Node处理CVS文件
+## 如何用Node处理CSV文件
 
 ## 小结
