@@ -15,6 +15,7 @@ cd docs/.vuepress/dist
 git config --global user.email "qylinxia@qq.com"
 git config --global user.name "Aaronlamz"
 git init
+git pull
 git add -A
 git commit -m 'deploy'
 
