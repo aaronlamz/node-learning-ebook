@@ -19,8 +19,4 @@ git status
 git branch -m master main
 git add -A
 git commit -m 'deploy'
-git status
-
-# 如果发布到 https://<USERNAME>.github.io/<REPO>
-git reset --soft HEAD^
 git push -f git@github.com:Aaronlamz/node-weekly.git origin main:gh-pages
