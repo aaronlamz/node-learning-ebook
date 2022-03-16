@@ -1,12 +1,12 @@
 # node-weekly
 
-<div align="center" bgColor="#ccc">
-  <img src="node.png">
+<div align="center">
+  <img src="./node.png">
 </div>
 
-##  ☘️ NodeJS 每周技术分享
+## NodeJS每周技术分享
 
-| # | 标题 | 类别  | 日期 |
+| # | Title | Type  | Date |
 | :---: | :---: | :---: | :---: |
 | 1 | [Node处理CSV文件完全指南](./articles/001/index.md) | CSV | 2022-02-26
 | 2 | [如何动态引入ECMAScript模块](./articles/002/index.md) | ESModule | 2022-03-07
