@@ -17,7 +17,7 @@ git branch -m master main
 git config --global init.defaultBranch main
 git config --global user.email "qylinxia@qq.com"
 git config --global user.name "Aaronlamz"
-git status
 git add .
 git commit -m 'deploy'
-git push -f git@github.com:Aaronlamz/node-weekly.git origin main:gh-pages
+git status
+git push -f git@github.com:Aaronlamz/node-weekly.git main:gh-pages
