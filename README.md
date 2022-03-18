@@ -1,8 +1,12 @@
 # node-weekly
 
 <div align="center">
-  <img src="./node.png">
+  <img src="./node.png" width="80%">
 </div>
+
+<p>
+  <img src="https://github.com/Aaronlamz/node-weekly/actions/workflows/deploy.yml/badge.svg">
+</p>
 
 ## NodeJS每周技术分享
 
