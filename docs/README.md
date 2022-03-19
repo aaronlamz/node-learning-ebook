@@ -2,7 +2,7 @@
 home: true
 heroImage: /hero.png
 heroText: Node.js 学习指南
-tagline: Node.js 学习指南、构建前端知识体系
+tagline: 构建前端知识体系
 actionText: 快速上手 →
 actionLink: /zh/guide/
 features:
