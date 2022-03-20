@@ -1,1 +1,3 @@
-# Getting Started
+## Guide
+
+![](~@img/hero.png)

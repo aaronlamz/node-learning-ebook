@@ -1,1 +1,3 @@
-# Getting Started md
+# Getting Started
+
+![](~@img/hero.png)
