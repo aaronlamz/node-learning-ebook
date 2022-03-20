@@ -4,5 +4,11 @@ module.exports = {
   base:'/node-learning/',
   themeConfig: {
     logo: '/nodejs.svg',
+    nav:  [
+      { text: '首页', link: '/' },
+      { text: '导航', link: '/md/resource/'},
+      { text: '指南', link: '/md/guide/' },
+      { text: 'GitHub', link: 'https://github.com/Aaronlamz/node-learning'}
+    ]
   }
 }
