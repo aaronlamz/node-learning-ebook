@@ -3,10 +3,11 @@
 <div align="center">
   <img src="./node.png" width="50%">
 </div>
-
 <p>
   <img src="https://github.com/Aaronlamz/node-weekly/actions/workflows/deploy.yml/badge.svg">
 </p>
+
+> 拼命编写中...
 
 ## 目录
 
