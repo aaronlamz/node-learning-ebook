@@ -3,8 +3,10 @@ home: true
 heroImage: /hero.png
 heroText: Node.js 学习指南
 tagline: 构建前端知识体系
-actionText: 开始探索 →
-actionLink: ./md/guide/basic/node-intro
+actions:
+  - text: 开始探索 →
+    link: /md/guide/basic/node-intro
+    type: primary
 features:
 - title: 殷实基础
   details: 不积跬步无以至千里， 仰望星空还需脚踏实地
@@ -15,6 +17,7 @@ features:
 footer: MIT Licensed | Copyright © 2022-present Aaron Lam
 ---
 
+<!-- version 1 syntax -->
 <!-- ::: slot footer
 MIT Licensed | Copyright © 2018-present [Aaron Lam](https://github.com/Aaronlamz)
 ::: -->
