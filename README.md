@@ -7,7 +7,7 @@
   <img src="https://github.com/Aaronlamz/node-weekly/actions/workflows/deploy.yml/badge.svg">
 </p>
 
-> 拼命编写中...
+> 搭建中...
 
 ## 目录
 
