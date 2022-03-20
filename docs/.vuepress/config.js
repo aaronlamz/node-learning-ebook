@@ -5,8 +5,9 @@ module.exports = {
   description: '构建前端知识体系',
   base:'/node-learning/',
   themeConfig: {
+    displayAllHeaders:true,
     logo: '/nodejs.svg',
-    nav:  [
+    navbar:  [
       { text: '首页', link: '/' },
       { text: '导航', link: '/md/resource/'},
       { text: '指南', link: '/md/guide/' },
@@ -14,8 +15,8 @@ module.exports = {
     ],
     sidebar: {
       '/guide/':[
-        '',
-        'basic'
+        '/',
+        ['/basic/node-intro','Node.js 简介']
       ]
     }
   },

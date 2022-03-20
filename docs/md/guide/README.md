@@ -1,3 +1,1 @@
-## Guide
-
-![](~@img/hero.png)
+# Guide
