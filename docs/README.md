@@ -5,7 +5,7 @@ heroText: Node.js 学习指南
 tagline: 构建前端知识体系
 actions:
   - text: 开始探索 →
-    link: /md/guide/basic/node-intro
+    link: /md/guide/
     type: primary
 features:
 - title: 殷实基础
