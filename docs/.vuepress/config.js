@@ -21,7 +21,7 @@ module.exports = {
           text: '指南',
           children: [
             '/md/guide/README.md',
-            '/md/guide/basic/node-intro',
+            '/md/guide/core/node-intro',
           ],
         },
       ],
