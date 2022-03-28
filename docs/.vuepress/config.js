@@ -11,7 +11,6 @@ module.exports = {
     logo: '/nodejs.svg',
     navbar:  [
       { text: '首页', link: '/' },
-      { text: '导航', link: '/md/resource/'},
       { text: '指南', link: '/md/guide/' },
       { text: 'GitHub', link: 'https://github.com/Aaronlamz/node-learning'}
     ],
@@ -20,8 +19,7 @@ module.exports = {
         {
           text: '指南',
           children: [
-            '/md/guide/README.md',
-            '/md/guide/core/node-intro',
+            '/md/guide/README.md'
           ],
         },
       ],
