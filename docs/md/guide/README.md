@@ -31,6 +31,14 @@ V8 类库为 Node.js 提供了 JavaScript 引擎，Node.js 通过 V8 C++ 的 API
 * [llhttp](https://github.com/nodejs/llhttp)
 HTTP 解析是通过一个由 C 语言编写、轻量级称作 llhttp 的类库进行的。由于它的设计不会引发系统调用和系统资源分配，因而它的预请求内存痕迹极小。
 
+* [c-ares](https://c-ares.haxx.se/docs.html)
+对于某些异步的 DNS 请求，Node.js 使用由 C 编写，称作 c-areas 的类库。它是通过 JavaScript 的 DNS 模块，以 resolve() 家族函数的形式发布。lookup() 函数，核心剩余部分使用它，借助在 libuv 中 getaddrinfo(3) 跨越函数的调用。那是因为 c-areas 支持 /etc/hosts，/etc/resolv.conf 以及 /etc/svc.conf。但不是像 mDNS 一样的东西。
+
+* [OpenSSL](https://www.openssl.org/docs/)
+OpenSSL 广泛地在 tls 和 crypto 模块中使用。它提供了战争环境下，许多现代网络为安全而依赖的密码函数。
+
+* [zlib](https://www.zlib.net/manual.html)
+为了快速压缩解压，Node.js 依赖于工业标准的 zlib 类库。同名可知的还有 gzip 和 libpng。Node.js 使用 zlib 创建同步、异步和数据流压缩、解压缩接口。
 ### 工具
 
 
