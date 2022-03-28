@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "dev":"yarn && yarn docs:dev",
+    "deploy":"yarn && yarn docs:build",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
