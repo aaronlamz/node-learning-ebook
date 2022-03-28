@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   lang: 'zh-CN',
   title: 'Node.js 学习指南',
-  description: '构建前端知识体系',
+  description: '构建 Node.js 知识体系',
   base:'/node-learning/',
   theme: '@vuepress/theme-default',
   themeConfig: {
@@ -18,8 +18,9 @@ module.exports = {
       '/md/guide/': [
         {
           text: '指南',
+          path:'/md/guide/',
           children: [
-            '/md/guide/README.md'
+            'README.md'
           ],
         },
       ],
