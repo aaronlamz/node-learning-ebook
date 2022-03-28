@@ -4,6 +4,9 @@ Node.js 诞生于 2009 年，由 Joyent 的员工 [Ryan Dahl](https://github.com
 ## 什么是 Node.js
 根据[官方描述](https://nodejs.org/en/)，Node.js® 是一个基于 [Chrome V8](https://v8.dev/) 引擎的 JavaScript 运行时环境。作为一个异步事件驱动的 JavaScript 运行时，Node.js 被设计用来构建可扩展的网络应用。
 
+## 为什么叫 Node
+起初，Ryan Dahl称他的项目为web.js，就是一个 Web 服务器，但是项目的发展超过了他最初单纯开发一个 Web 服务器的想法，变成了构建网络应用的一个基础框架，这样可以在它的基础上构建更多的东西，诸如服务器、客户端、命令行工具等。Node 发展为一个强制不共享任何资源的单线程、单进程系统，包含十分适宜网络的库，为构建大型分布式应用程序提供基础设施，其目标也是成为一个构建快速、可伸缩的网络应用平台。它自身非常简单，通过通信协议来组织许多 Node ，非常容易通过扩展来达成构建大型网络应用的目的。每一个 Node 进程都构成这个网络应用中的一个节点，这是它名字所含意义的真谛。
+
 ## Node.js 特点
 * Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。Chrome V8 引擎以 C/C++ 为主，相当于使用JavaScript 写法，转成 C/C++ 调用，大大的降低了学习成本。
 
@@ -19,6 +22,14 @@ Node.js 诞生于 2009 年，由 Joyent 的员工 [Ryan Dahl](https://github.com
 Node.js 依赖于以下一些依赖项，这样它才能正常工作。
 
 ### 类库
+* [V8](https://v8.dev/docs/)
+V8 类库为 Node.js 提供了 JavaScript 引擎，Node.js 通过 V8 C++ 的 API 函数接口进行操控， V8 由谷歌公司维护，用于谷歌浏览器中。
+
+* [libuv](http://docs.libuv.org/en/v1.x/)
+另外一个重要的依赖项是 libuv，它是一个 C 写成的类库，用于非阻塞型的 I/O 操作，同时在所有支持的操作系统上保持一致的接口。它提供了一些机制来处理诸如文件系统、DNS、网络、子进程、管道、信号量控制、轮询机制和数据流。它同样也提供了一个线程池，用于无法在操作系统层面进行异步操作的任务卸载。
+
+* [llhttp](https://github.com/nodejs/llhttp)
+HTTP 解析是通过一个由 C 语言编写、轻量级称作 llhttp 的类库进行的。由于它的设计不会引发系统调用和系统资源分配，因而它的预请求内存痕迹极小。
 
 ### 工具
 
