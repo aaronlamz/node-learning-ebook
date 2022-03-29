@@ -40,6 +40,13 @@ OpenSSL 广泛地在 tls 和 crypto 模块中使用。它提供了战争环境�
 * [zlib](https://www.zlib.net/manual.html)
 为了快速压缩解压，Node.js 依赖于工业标准的 zlib 类库。同名可知的还有 gzip 和 libpng。Node.js 使用 zlib 创建同步、异步和数据流压缩、解压缩接口。
 ### 工具
+* [npm](https://docs.npmjs.com/)
+Node.js 完全是基于模块化构建的，因此需要一个高质量的包管理器；有鉴于此 npm 产生了。随着 npm 的产生史上最大的社区创建的编程生态圈诞生，它们使得构建 Node.js 快而容易。
 
+* [gyp](https://gyp.gsrc.io/docs/UserDocumentation.md)
+构建系统通过 gyp 来处理。这是一个从 V8 拷贝而来、基于 python 的项目生成工具。它可以生成项目文件用以跨不同平台中使用。Node.js 需要一个构建系统，因为它自身的大部分，以及它的依赖项，是用需要编译的语言写成的。
+
+* [gtest](https://code.google.com/p/googletest/wiki/V1_7_Documentation)
+本地代码可以通过 gtest 进行测试，它是从 Chromium 收录的。它不需要一个真实可启动的 Node.js 环境下，直接测试 C/C++ 程序。
 
 ## Node.js 应用场景
