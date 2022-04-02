@@ -55,5 +55,13 @@ Node.js 完全是基于模块化构建的，因此需要一个高质量的包管
 但在今天来看，DIRT 还是范围小了。其实 DIRT 本质上说的 I/O 处理的都算，但随着大前端的发展，Node.js 已经不再只是 I/O 处理相关了。
 
 Node.js 使用场景主要分为4大类
+* 1）跨平台：覆盖你能想到的面向用户的所有平台，传统的PC Web端，以及PC客户端 nw.js/electron 、移动端 cordova、HTML5、react-native、weex，硬件 ruff.io 等
+* 2）Web应用开发：网站、Api、RPC服务等
+* 3）前端：三大框架 React \ Vue \ Angular 辅助开发，以及工程化演进过程（使用Gulp /Webpack 构建 Web 开发工具）
+* 4）工具：npm上各种工具模块，包括各种前端预编译、构建工具 Grunt、 Gulp、Webpack、脚手架，命令行工具等
+
+具体的 Node.js 的使用场景
+
+
 
 
