@@ -41,7 +41,7 @@ module.exports = {
           ],
         },
         {
-          text: 'Node.js 实战',
+          text: '实战指南',
           path:'/md/guide/',
           collapsible:true,
           children: [
