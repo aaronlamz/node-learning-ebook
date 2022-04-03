@@ -60,7 +60,7 @@ Node.js 使用场景主要分为4大类
 * 前端：三大框架 React 、 Vue 、 Angular 辅助开发，以及工程化演进过程（使用Gulp /Webpack 构建 Web 开发工具）
 * 工具：npm上各种工具模块，包括各种前端预编译、构建工具 Grunt、 Gulp、Webpack、脚手架，命令行工具等
 
-Node.js 具体的使用场景
+Node.js 具体的应用场景
 |分类|描述|相关模块|
 |:---|:---:|:---:|
 |网站|类似于 cnodejs.org 这样传统的网站|Express、 Koa|
@@ -75,6 +75,7 @@ Node.js 具体的使用场景
 |编辑器|Atom 和 VSCode 都是基于 electron 模块的|electron|
 |物联网与硬件|ruff.io和很多硬件都支持node sdk|ruff|
 
+Node.js 的应用场景会越来越广泛，更多参见 [sindresorhus/awesome-nodejs](https://github.com/sindresorhus/awesome-nodejs)
 
 
 
