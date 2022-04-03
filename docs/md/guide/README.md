@@ -55,21 +55,26 @@ Node.js 完全是基于模块化构建的，因此需要一个高质量的包管
 但在今天来看，DIRT 还是范围小了。其实 DIRT 本质上说的 I/O 处理的都算，但随着大前端的发展，Node.js 已经不再只是 I/O 处理相关了。
 
 Node.js 使用场景主要分为4大类
-* 跨平台：覆盖你能想到的面向用户的所有平台，传统的PC Web端，以及PC客户端 nw.js/electron 、移动端 cordova、HTML5、react-native、weex，硬件 ruff.io 等
-* Web应用开发：网站、Api、RPC服务等
-* 前端：三大框架 React \ Vue \ Angular 辅助开发，以及工程化演进过程（使用Gulp /Webpack 构建 Web 开发工具）
+* 跨平台：覆盖你能想到的面向用户的所有平台，传统的PC Web端，以及PC客户端 nw.js、electron 、移动端 cordova、HTML5、react-native、weex，硬件 ruff.io 等
+* Web应用开发：网站、API、RPC服务等
+* 前端：三大框架 React 、 Vue 、 Angular 辅助开发，以及工程化演进过程（使用Gulp /Webpack 构建 Web 开发工具）
 * 工具：npm上各种工具模块，包括各种前端预编译、构建工具 Grunt、 Gulp、Webpack、脚手架，命令行工具等
 
-具体的 Node.js 的使用场景
+Node.js 具体的使用场景
 |分类|描述|相关模块|
-|---|:---:|:---:|
+|:---|:---:|:---:|
 |网站|类似于 cnodejs.org 这样传统的网站|Express、 Koa|
 |API|同时提供给移动端，PC，H5 等前端使用的 HTTP Api 接口|Restify、HApi|
-|网站|类似于 cnodejs.org 这样传统的网站|Express、 Koa|
-|网站|类似于 cnodejs.org 这样传统的网站|Express、 Koa|
-|网站|类似于 cnodejs.org 这样传统的网站|Express、 Koa|
-|网站|类似于 cnodejs.org 这样传统的网站|Express、 Koa|
-|网站|类似于 cnodejs.org 这样传统的网站|Express、 Koa|
+|API代理|为前端提供的，主要对后端Api接口进行再处理，以便更多的适应前端开发|Express、 Koa|
+|IM即时聊天|基于 WebSocket协议|Socket.io 、 sockjs|
+|反向代理|提供类似于 nginx 反向代理功能，但对前端更友好|anyproxy 、 node-http-proxy 、 hiproxy|
+|前端构建工具|辅助前端开发，尤其是各种预编译，构建相关的工具，能够极大的提高前端开发效率|Grunt 、 Gulp 、 Bower 、 Webpack 、 Fis3 、 YKit|
+|命令行工具|使用命令行自定义了很多相关工具|Cordova 、 Shell.js|
+|跨平台打包工具|使用 Web 开发技术开发PC客户端是目前最流行的方式，会有更多前端开发工具是采用这种方式的|PC端的electron、nw.js|
+|P2P|区块链开发、BT客户端|webtorrent 、 ipfs|
+|编辑器|Atom 和 VSCode 都是基于 electron 模块的|electron|
+|物联网与硬件|ruff.io和很多硬件都支持node sdk|ruff|
+
 
 
 
