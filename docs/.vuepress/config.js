@@ -40,6 +40,14 @@ module.exports = {
             'README.md'
           ],
         },
+        {
+          text: 'Node.js 实战',
+          path:'/md/guide/',
+          collapsible:true,
+          children: [
+            'README.md'
+          ],
+        },
       ],
     }
   },
