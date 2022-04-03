@@ -17,8 +17,25 @@ module.exports = {
     sidebar: {
       '/md/guide/': [
         {
-          text: '指南',
+          text: '基础入门',
           path:'/md/guide/',
+          collapsible:true,
+          children: [
+            'README.md'
+          ],
+        },
+        {
+          text: '核心概念',
+          path:'/md/guide/',
+          collapsible:true,
+          children: [
+            'README.md'
+          ],
+        },
+        {
+          text: '调试指南',
+          path:'/md/guide/',
+          collapsible:true,
           children: [
             'README.md'
           ],
