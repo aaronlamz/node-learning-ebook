@@ -7,7 +7,7 @@
   <img src="https://github.com/Aaronlamz/node-weekly/actions/workflows/deploy.yml/badge.svg">
 </p>
 
-> 搭建中...
+> [文档构建中](https://aaronlamz.github.io/node-learning/)
 
 ## 目录
 
