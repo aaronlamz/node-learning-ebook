@@ -5,6 +5,7 @@ module.exports = {
   title: 'Node.js 学习指南',
   description: '构建 Node.js 知识体系',
   base:'/node-learning/',
+  head: [['link', { rel: 'icon', href: '/node-learning/favicon.ico' }]],
   theme: '@vuepress/theme-default',
   themeConfig: {
     displayAllHeaders:true,
