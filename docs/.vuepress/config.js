@@ -18,10 +18,9 @@ module.exports = {
       '/md/guide/': [
         {
           text: '基础入门',
-          path:'/md/guide/',
           collapsible:true,
           children: [
-            'README.md'
+            '/md/guide/README.md',
           ],
         },
         {
@@ -29,7 +28,7 @@ module.exports = {
           path:'/md/guide/',
           collapsible:true,
           children: [
-            'README.md'
+            '/md/guide/core/basic-principle.md',
           ],
         },
         {
@@ -37,7 +36,7 @@ module.exports = {
           path:'/md/guide/',
           collapsible:true,
           children: [
-            'README.md'
+            '/md/guide/debug/README.md'
           ],
         },
         {
@@ -45,7 +44,7 @@ module.exports = {
           path:'/md/guide/',
           collapsible:true,
           children: [
-            'README.md'
+            '/md/guide/practice/README.md'
           ],
         },
       ],
