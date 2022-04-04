@@ -12,6 +12,7 @@ module.exports = {
     navbar:  [
       { text: '首页', link: '/' },
       { text: '指南', link: '/md/guide/' },
+      { text: '面试', link: '/md/interview/' },
       { text: 'GitHub', link: 'https://github.com/Aaronlamz'}
     ],
     sidebar: {
