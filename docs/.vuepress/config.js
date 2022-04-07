@@ -53,12 +53,7 @@ module.exports = {
       ],
     }
   },
-  // 注意修改webpack配置后必须重新重启服务器才生效，晕，查了半天。
-  configureWebpack: {
-    resolve: {
-      alias: {
-        '@img': path.resolve(__dirname, '../asstes/img'),
-      }
-    }
+  alias: {
+    '@img': path.resolve(__dirname, '../assets/img')
   }
 }
