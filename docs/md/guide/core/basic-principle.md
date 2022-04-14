@@ -3,4 +3,7 @@
 
 <div align="center"><img src="~@img/node_architrcture.png"></div>
 
+* Chrome V8 是 Google 发布的开源 JavaScript 引擎，采用 C/C++ 编写，在 Google 的 Chrome 浏览器中被使用。Chrome V8 引擎可以独立运行，也可以用来嵌入到 C/C++ 应用程序中执行。
+* Event Loop 事件循环（由 libuv 提供）
+* Thread Pool 线程池（由 libuv 提供）
 
