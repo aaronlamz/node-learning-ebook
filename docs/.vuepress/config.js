@@ -24,14 +24,15 @@ module.exports = {
           collapsible:true,
           children: [
             '/md/guide/README.md',
+            '/md/guide/basic/basic-principle.md',
           ],
         },
         {
-          text: '核心概念',
+          text: '深入理解',
           path:'/md/guide/',
           collapsible:true,
           children: [
-            '/md/guide/core/basic-principle.md',
+            '/md/guide/basic/basic-principle.md',
           ],
         },
         {
