@@ -1,4 +1,4 @@
-# Node.js Learning
+# (WIP)Node.js Learning
 
 <div align="center">
   <img src="./node.png" width="50%">
@@ -6,8 +6,6 @@
 <p>
   <img src="https://github.com/Aaronlamz/node-weekly/actions/workflows/deploy.yml/badge.svg">
 </p>
-
-> [文档构建中](https://aaronlamz.github.io/node-learning/)
 
 ## 目录
 
