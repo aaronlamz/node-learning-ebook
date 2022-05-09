@@ -12,7 +12,7 @@ module.exports = {
     logo: '/nodejs.svg',
     navbar:  [
       { text: '首页', link: '/' },
-      { text: '指南', link: '/md/guide/' },
+      { text: '指南', link: '/md/guide/basic/node-intro' },
       { text: '面试', link: '/md/interview/' },
       { text: '关于', link: '/md/about/' },
       { text: 'GitHub', link: 'https://github.com/Aaronlamz'}
@@ -23,7 +23,7 @@ module.exports = {
           text: '基础入门',
           collapsible:true,
           children: [
-            '/md/guide/README.md',
+            '/md/guide/basic/node-intro.md',
             '/md/guide/basic/basic-principle.md',
           ],
         },
