@@ -33,7 +33,7 @@ module.exports = {
           path:'/md/guide/',
           collapsible:true,
           children: [
-            '/md/guide/basic/basic-principle.md',
+            '/md/guide/deep/asyn-io.md',
           ],
         },
         {
