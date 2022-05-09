@@ -25,6 +25,7 @@ module.exports = {
           children: [
             '/md/guide/basic/node-intro.md',
             '/md/guide/basic/basic-principle.md',
+            '/md/guide/basic/module-mechanism.md',
           ],
         },
         {
