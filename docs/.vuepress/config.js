@@ -14,6 +14,7 @@ module.exports = {
       { text: '首页', link: '/' },
       { text: '指南', link: '/md/guide/basic/node-intro' },
       { text: '面试', link: '/md/interview/' },
+      { text: '源码', link: '/md/source-code/' },
       { text: '关于', link: '/md/about/' },
       { text: 'GitHub', link: 'https://github.com/Aaronlamz'}
     ],
