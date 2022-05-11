@@ -8,5 +8,5 @@
 * Thread Pool 线程池（由 libuv 提供）
 
 ## 事件循环（Event Loop）
-
-## 线程池（Thread Pool）
+### 什么是事件循环
+事件循环是 Node.js 处理非阻塞 I/O 操作的机制——尽管 JavaScript 是单线程处理的——当有可能的时候，它们会把操作转移到系统内核中去。
