@@ -26,6 +26,8 @@ module.exports = {
             '/md/guide/basic/node-intro.md',
             '/md/guide/basic/basic-principle.md',
             '/md/guide/basic/module-mechanism.md',
+            '/md/guide/basic/file-system.md',
+            '/md/guide/basic/net-dev.md',
           ],
         },
         {
@@ -34,6 +36,8 @@ module.exports = {
           collapsible:true,
           children: [
             '/md/guide/deep/asyn-io.md',
+            '/md/guide/deep/memory.md',
+            '/md/guide/deep/process.md',
           ],
         },
         {
