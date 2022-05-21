@@ -8,7 +8,7 @@
 </p>
 
 ## 文档
-[Visit Documentation](https://aaronlamz.github.io/node-learning/)
+[Documentation](https://aaronlamz.github.io/node-learning/)
 
 ## 目录
 
