@@ -45,7 +45,13 @@
 > 注意： 在 Windows 和 Unix/Linux 实现之间存在细微的差异，但这对演示来说并不重要。最重要的部分在这里。实际上有七或八个步骤，但我们关心的是 Node.js 实际上使用以上的某些步骤。
 
 ### 阶段概述
-* 定时器（timer）：本阶段执行已经被 setTimeout() 和 setInterval() 的调度回调函数。
-* 待定回调（pending callback）：执行延迟到下一个循环迭代的 I/O 回调。
+* timer（定时器）：本阶段执行已经被 setTimeout() 和 setInterval() 的调度回调函数。
+* pending callback（待定回调）：执行延迟到下一个循环迭代的 I/O 回调。
+* idle, prepare：仅系统内部使用。
+* poll（轮询）：检索新的 I/O 事件;执行与 I/O 相关的回调（几乎所有情况下，除了关闭的回调函数，那些由计时器和 setImmediate() 调度的之外），其余情况 node 将在适当的时候在此阻塞。
+* check（检测）：setImmediate() 回调函数在这里执行。
+* close callbacks（关闭的回调函数）：一些关闭的回调函数，如：socket.on('close', ...)。
 
+在每次运行的事件循环之间，Node.js 检查它是否在等待任何异步 I/O 或计时器，如果没有的话，则完全关闭。
 
+### 阶段的详细概述
