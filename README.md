@@ -1,4 +1,4 @@
-# Node.js Learning
+# Node.js 入门指南
 
 <div align="center">
   <img src="./node.png" width="50%">
@@ -7,7 +7,7 @@
   <img src="https://github.com/Aaronlamz/node-weekly/actions/workflows/deploy.yml/badge.svg">
 </p>
 
-## Status
+## 状态
 Working In Process
 
 ## 文档
