@@ -1,7 +1,7 @@
 # Node.js 学习指南
 
 <div align="center">
-  <img src="./node.png" width="50%">
+  <img src="./node.png" width="40%">
 </div>
 <p>
   <img src="https://github.com/Aaronlamz/node-weekly/actions/workflows/deploy.yml/badge.svg">
