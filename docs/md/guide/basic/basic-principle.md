@@ -172,5 +172,9 @@ timeout
 ```
 使用 setImmediate() 相对于setTimeout() 的主要优势是，如果setImmediate()是在 I/O 周期内被调度的，那它将会在其中任何的定时器之前执行，跟这里存在多少个定时器无关。（看事件循环阶段就可以知道，setTimeout总是在下一个事件循环阶段执行，所以setImmediate优先执行）
 
+### 理解process.nextTick()
+
+
+
 ## 参考链接
 [Node.js 事件循环，定时器和 process.nextTick()](https://nodejs.org/zh-cn/docs/guides/event-loop-timers-and-nexttick/)
