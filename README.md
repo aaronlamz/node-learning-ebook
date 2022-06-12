@@ -8,7 +8,7 @@
 </p>
 
 ## 状态
-Working In Process
+进行中
 
 ## 文档
 [https://aaronlamz.github.io/node-learning](https://aaronlamz.github.io/node-learning/)
