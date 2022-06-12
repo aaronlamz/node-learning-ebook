@@ -119,7 +119,58 @@ setImmediate() 实际上是一个在事件循环的单独阶段运行的特殊�
 
 
 ### setImmediate() 对比 setTimeout()
+setImmediate() 和 setTimeout() 很类似，但是基于被调用的时机，他们也有不同表现。
+* setImmediate() 设计为一旦在当前 轮询 阶段完成， 就执行脚本。
+* setTimeout() 在最小阈值（ms 单位）过后运行脚本。
 
+执行计时器的顺序将根据调用它们的上下文而异。如果二者都从主模块内调用，则计时器将受进程性能的约束（这可能会受到计算机上其他正在运行应用程序的影响）。
+例如，如果运行以下不在 I/O 周期（即主模块）内的脚本，则执行两个计时器的顺序是非确定性的，因为它受进程性能的约束：
+```javascript
+// timeout_vs_immediate.js
+setTimeout(() => {
+  console.log('timeout');
+}, 0);
+
+setImmediate(() => {
+  console.log('immediate');
+});
+```
+
+```javascript
+$ node timeout_vs_immediate.js
+timeout
+immediate
+
+$ node timeout_vs_immediate.js
+immediate
+timeout
+```
+
+但是，如果你把这两个函数放入一个 I/O 循环内调用，setImmediate 总是被优先调用：
+```javascript
+// timeout_vs_immediate.js
+const fs = require('fs');
+
+fs.readFile(__filename, () => {
+  setTimeout(() => {
+    console.log('timeout');
+  }, 0);
+  setImmediate(() => {
+    console.log('immediate');
+  });
+});
+```
+
+```javascript
+$ node timeout_vs_immediate.js
+immediate
+timeout
+
+$ node timeout_vs_immediate.js
+immediate
+timeout
+```
+使用 setImmediate() 相对于setTimeout() 的主要优势是，如果setImmediate()是在 I/O 周期内被调度的，那它将会在其中任何的定时器之前执行，跟这里存在多少个定时器无关。（看事件循环阶段就可以理解，setTimeout总是在下一个事件循环阶段执行，所以setImmediate优先执行）
 
 ## 参考链接
 [Node.js 事件循环，定时器和 process.nextTick()](https://nodejs.org/zh-cn/docs/guides/event-loop-timers-and-nexttick/)
