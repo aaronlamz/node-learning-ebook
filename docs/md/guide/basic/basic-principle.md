@@ -173,6 +173,12 @@ timeout
 使用 setImmediate() 相对于setTimeout() 的主要优势是，如果setImmediate()是在 I/O 周期内被调度的，那它将会在其中任何的定时器之前执行，跟这里存在多少个定时器无关。（看事件循环阶段就可以知道，setTimeout总是在下一个事件循环阶段执行，所以setImmediate优先执行）
 
 ### 理解process.nextTick()
+你可能已经注意到 process.nextTick() 在图示中没有显示，即使它是异步 API 的一部分。这是因为 process.nextTick() 从技术上讲不是事件循环的一部分。相反，它都将在当前操作完成后处理 nextTickQueue， 而不管事件循环的当前阶段如何。这里的一个操作被视作为一个从底层 C/C++ 处理器开始过渡，并且处理需要执行的 JavaScript 代码。
+
+回顾我们的图示，任何时候在给定的阶段中调用 process.nextTick()，所有传递到 process.nextTick() 的回调将在事件循环继续之前解析。这可能会造成一些糟糕的情况，因为它允许您通过递归 process.nextTick()调用来“饿死”您的 I/O，阻止事件循环到达 轮询 阶段。
+
+为什么会允许这样？
+为什么这样的事情会包含在 Node.js 中？它的一部分是一个设计理念，其中 API 应该始终是异步的，即使它不必是。以此代码段为例：
 
 
 
