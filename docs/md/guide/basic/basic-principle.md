@@ -179,7 +179,15 @@ timeout
 
 为什么会允许这样？
 为什么这样的事情会包含在 Node.js 中？它的一部分是一个设计理念，其中 API 应该始终是异步的，即使它不必是。以此代码段为例：
-
+```javascript
+function apiCall(arg, callback) {
+  if (typeof arg !== 'string')
+    return process.nextTick(
+      callback,
+      new TypeError('argument should be string')
+    );
+}
+```
 
 
 ## 参考链接
