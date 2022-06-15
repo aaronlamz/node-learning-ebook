@@ -188,7 +188,7 @@ function apiCall(arg, callback) {
     );
 }
 ```
-
+代码段进行参数检查。如果不正确，则会将错误传递给回调函数。最近对 API 进行了更新，允许传递参数给 process.nextTick()，这将允许它接受任何在回调函数位置之后的参数，并将参数传递给回调函数作为回调函数的参数，这样您就不必嵌套函数了。
 
 ## 参考链接
 [Node.js 事件循环，定时器和 process.nextTick()](https://nodejs.org/zh-cn/docs/guides/event-loop-timers-and-nexttick/)
