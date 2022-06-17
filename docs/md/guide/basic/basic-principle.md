@@ -192,5 +192,6 @@ function apiCall(arg, callback) {
 
 我们正在做的是将错误传回给用户，但仅在执行用户的其余代码之后。通过使用process.nextTick()，我们保证 apiCall() 始终在用户代码的其余部分之后和在让事件循环继续进行之前，执行其回调函数。为了实现这一点，JS 调用栈被允许展开，然后立即执行提供的回调，允许进行递归调用 process.nextTick()，而不触碰 RangeError: 超过 V8 的最大调用堆栈大小 限制。
 
+
 ## 参考链接
 [Node.js 事件循环，定时器和 process.nextTick()](https://nodejs.org/zh-cn/docs/guides/event-loop-timers-and-nexttick/)
