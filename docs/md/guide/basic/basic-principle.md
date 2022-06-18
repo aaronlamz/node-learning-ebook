@@ -177,7 +177,7 @@ timeout
 
 回顾我们的图示，任何时候在给定的阶段中调用 process.nextTick()，所有传递到 process.nextTick() 的回调将在事件循环继续之前解析。这可能会造成一些糟糕的情况，因为它允许您通过递归 process.nextTick()调用来“饿死”您的 I/O，阻止事件循环到达 轮询 阶段。
 
-为什么会允许这样？
+##### 为什么会允许这样？
 为什么这样的事情会包含在 Node.js 中？它的一部分是一个设计理念，其中 API 应该始终是异步的，即使它不必是。以此代码段为例：
 ```javascript
 function apiCall(arg, callback) {
@@ -188,9 +188,55 @@ function apiCall(arg, callback) {
     );
 }
 ```
-代码段进行参数检查。如果不正确，则会将错误传递给回调函数。最近对 API 进行了更新，允许传递参数给 process.nextTick()，这将允许它接受任何在回调函数位置之后的参数，并将参数传递给回调函数作为回调函数的参数，这样您就不必嵌套函数了。
+代码段进行参数检查。如果不正确，则会将错误传递给回调函数。最近对 API 进行了更新，允许传递参数给 process.nextTick()，这将允许它接受任何在回调函数位置之后的参数，并将参数传递给回调函数作为回调函数的参数，这样您就不必嵌套函数了。(不理解)
 
 我们正在做的是将错误传回给用户，但仅在执行用户的其余代码之后。通过使用process.nextTick()，我们保证 apiCall() 始终在用户代码的其余部分之后和在让事件循环继续进行之前，执行其回调函数。为了实现这一点，JS 调用栈被允许展开，然后立即执行提供的回调，允许进行递归调用 process.nextTick()，而不触碰 RangeError: 超过 V8 的最大调用堆栈大小限制。
+
+这种设计原理可能会导致一些潜在的问题。 以此代码段为例：
+```javascript
+let bar;
+
+// this has an asynchronous signature, but calls callback synchronously
+function someAsyncApiCall(callback) {
+  callback();
+}
+
+// the callback is called before `someAsyncApiCall` completes.
+someAsyncApiCall(() => {
+  // since someAsyncApiCall has completed, bar hasn't been assigned any value
+  console.log('bar', bar); // undefined
+});
+
+bar = 1;
+```
+用户将 someAsyncApiCall() 定义为具有异步签名，但实际上它是同步运行的（那干嘛要写成异步函数签名，这只是例子前置条件？）。当调用它时，提供给 someAsyncApiCall() 的回调是在事件循环的同一阶段内被调用，因为 someAsyncApiCall() 实际上并没有异步执行任何事情。结果，回调函数在尝试引用 bar，但作用域中可能还没有该变量，因为脚本尚未运行完成。（因为是同步代码，还没执行到bar=1这一步）
+
+通过将回调置于 process.nextTick() 中，脚本仍具有运行完成的能力，允许在调用回调之前初始化所有的变量、函数等。它还具有不让事件循环继续的优点，适用于让事件循环继续之前，警告用户发生错误的情况。下面是上一个使用 process.nextTick() 的示例：
+```javascript
+let bar;
+
+function someAsyncApiCall(callback) {
+  process.nextTick(callback);
+}
+
+someAsyncApiCall(() => {
+  console.log('bar', bar); // 1
+});
+
+bar = 1;
+```
+通过process.nextTick()，我们可以保证在调用回调之前初始化所有的变量、函数等。调用 process.nextTick()是异步操作，所有传递到 process.nextTick() 的回调将在事件循环继续之前解析。所以先执行同步代码 bar=1，然后执行异步代码 console.log('bar', bar)。
+
+这又是另外一个真实的例子：
+```javascript
+const server = net.createServer(() => {}).listen(8080);
+
+server.on('listening', () => {});
+```
+只有传递端口时，端口才会立即被绑定。因此，可以立即调用 'listening' 回调。问题是 .on('listening') 的回调在那个时间点尚未被设置。
+
+为了绕过这个问题，'listening' 事件被排在 nextTick() 中，以允许脚本运行完成。这让用户设置所想设置的任何事件处理器。
+
 
 
 ## 参考链接
