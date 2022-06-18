@@ -237,7 +237,7 @@ server.on('listening', () => {});
 
 为了绕过这个问题，'listening' 事件被排在 nextTick() 中，以允许脚本运行完成。这让用户设置所想设置的任何事件处理器。
 
-
+### process.nextTick() 对比 setImmediate()
 
 ## 参考链接
 [Node.js 事件循环，定时器和 process.nextTick()](https://nodejs.org/zh-cn/docs/guides/event-loop-timers-and-nexttick/)
