@@ -238,6 +238,67 @@ server.on('listening', () => {});
 为了绕过这个问题，'listening' 事件被排在 nextTick() 中，以允许脚本运行完成。这让用户设置所想设置的任何事件处理器。
 
 ### process.nextTick() 对比 setImmediate()
+就用户而言，我们有两个类似的调用，但它们的名称令人费解。
+
+* process.nextTick() 在同一个阶段立即执行。(按照上文所说的，所有传递到 process.nextTick() 的回调将在事件循环继续之前解析。还是处于同一个阶段？)
+* setImmediate() 在事件循环的接下来的迭代或 'tick' 上触发。(怎么感觉两个概念取反了？)
+
+我们建议开发人员在所有情况下都使用 setImmediate()，因为它更容易理解。
+// 待深入研究
+
+### 为什么要使用 process.nextTick()?
+有两个主要原因：
+
+1、允许用户处理错误，清理任何不需要的资源，或者在事件循环继续之前重试请求。
+
+2、有时有让回调在栈展开后，但在事件循环继续之前运行的必要。
+
+以下是一个符合用户预期的简单示例：
+```javascript
+const server = net.createServer();
+server.on('connection', (conn) => {});
+
+server.listen(8080);
+server.on('listening', () => {});
+```
+假设 listen() 在事件循环开始时运行，但 listening 的回调被放置在 setImmediate() 中。除非传递过主机名，才会立即绑定到端口。为使事件循环继续进行，它必须命中 轮询 阶段，这意味着有可能已经接收了一个连接，并在侦听事件之前触发了连接事件。
+
+另外一个示例直接从 EventEmitter 继承，并且在构造函数内部触发一个事件：
+```javascript
+const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter {
+  constructor() {
+    super();
+    this.emit('event');
+  }
+}
+
+const myEmitter = new MyEmitter();
+myEmitter.on('event', () => {
+  console.log('an event occurred!');
+});
+```
+你不能立即从构造函数中触发事件，因为脚本尚未处理到用户为该事件分配回调函数的地方。因此，在构造函数本身中可以使用 process.nextTick() 来设置回调，以便在构造函数完成后发出该事件，这是预期的结果：
+```javascript
+const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter {
+  constructor() {
+    super();
+
+    // use nextTick to emit the event once a handler is assigned
+    process.nextTick(() => {
+      this.emit('event');
+    });
+  }
+}
+
+const myEmitter = new MyEmitter();
+myEmitter.on('event', () => {
+  console.log('an event occurred!');
+});
+```
 
 ## 参考链接
 [Node.js 事件循环，定时器和 process.nextTick()](https://nodejs.org/zh-cn/docs/guides/event-loop-timers-and-nexttick/)
