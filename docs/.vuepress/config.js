@@ -4,8 +4,8 @@ module.exports = {
   lang: 'zh-CN',
   title: 'Node.js 学习指南',
   description: '构建 Node.js 知识体系',
-  base:'/node-learning/',
-  head: [['link', { rel: 'icon', href: '/node-learning/favicon.ico' }]],
+  base:'/node-learning-ebook/',
+  head: [['link', { rel: 'icon', href: '/node-learning-ebook/favicon.ico' }]],
   theme: '@vuepress/theme-default',
   themeConfig: {
     displayAllHeaders:true,

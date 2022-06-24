@@ -11,7 +11,7 @@
 进行中
 
 ## 文档
-[https://aaronlamz.github.io/node-learning](https://aaronlamz.github.io/node-learning/)
+[https://aaronlamz.github.io/node-learning-ebook/](https://aaronlamz.github.io/node-learning-ebook/)
 
 ## 目录
 
