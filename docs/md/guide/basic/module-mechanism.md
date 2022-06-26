@@ -18,6 +18,28 @@ CommonJS规范的提出，主要是为了弥补当前JavaScript没有标准的�
 ## CommonJS 规范
 CommonJS对模块的定义十分简单，主要分为模块引用、模块定义和模块标识3个部分。
 
+### 模块饮用
+模块引用的示例代码如下：
+```javascript
+var math = require('math');
+```
+在CommonJS规范中，存在require()方法，这个方法接受模块标识，以此引入一个模块的API到当前上下文中。
+
+### 模块定义
+在模块中，上下文提供require()方法来引入外部模块。对应引入的功能，上下文提供了exports对象用于导出当前模块的方法或者变量，并且它是唯一导出的出口。在模块中，还存在一个module对象，它代表模块自身，而exports是module的属性。在Node中，一个文件就是一个模块，将方法挂载在exports对象上作为属性即可定义导出的方式：
+```javascript
+// math.js
+exports.add = function () {
+  var sum = 0;
+  for (var i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+```
+
+
+
 
 ## Node.js 模块实现
 
