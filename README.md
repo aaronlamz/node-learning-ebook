@@ -8,18 +8,9 @@
 </p>
 
 ## 状态
-进行中
+WIP
 
 ## 文档
 [https://aaronlamz.github.io/node-learning-ebook/](https://aaronlamz.github.io/node-learning-ebook/)
-
-## 目录
-
-- [Node处理CSV文件完全指南](./articles/001/index.md)
-- [如何动态引入ECMAScript模块](./articles/002/index.md)
-- [进程管理器PM2完全指南](./articles/003/index.md)
-
-
-
 
 
