@@ -18,7 +18,7 @@ CommonJS规范的提出，主要是为了弥补当前JavaScript没有标准的�
 ## CommonJS 规范
 CommonJS 对模块的定义十分简单，主要分为模块引用、模块定义和模块标识3个部分。
 
-### 模块饮用
+### 模块引用
 模块引用的示例代码如下：
 ```javascript
 var math = require('math');
