@@ -126,6 +126,23 @@ require()在分析标识符的过程中，会出现标识符中不包含文件�
 如果在目录分析的过程中没有定位成功任何文件，则自定义模块进入下一个模块路径进行查找。如果模块路径数组都被遍历完毕，依然没有查找到目标文件，则会抛出查找失败的异常。
 
 ### 模块编译
+在Node中，每个文件模块都是一个对象，它的定义如下：
+
+```javascript
+  function Module(id, parent){
+    this.id = id;
+    this.exports = {};
+    if(parent && parent.children){
+      parent.children.push(this)
+    }
+    this.filename = null;
+    this.loaded = false;
+    this.children = [];
+  }
+```
+编译和执行是引入文件模块的最后一个阶段。定位到具体的文件后，Node会新建一个模块对象，然后根据路径载入并编译。对于不同的文件扩展名，其载入方法也有所不同，具体如下所示。
+
+
 
 ## C/C++ 扩展模块
 
