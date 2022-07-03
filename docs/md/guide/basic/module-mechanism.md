@@ -147,9 +147,58 @@ require()在分析标识符的过程中，会出现标识符中不包含文件�
 * 其余扩展名文件。 它们都被当做 .js 文件载入。
 
 每一个编译成功的模块都会将其文件路径作为索引缓存在Module._cache对象上，以提高二次引入的性能。
+根据不同的文件扩展名，Node会调用不同的读取方式，如.json文件的调用如下：
 
+```javascript
+   // Native extension for .json:
+   Module._extensions['.json'] = function(module, filename) {
+     var content = NativeModule.require('fs').readFileSync(filename, 'utf8');
+     try {
+       module.exports = JSON.parse(content);
+     } catch (err) {
+       err.message = filename + ': ' + err.message;
+       throw err;
+     }
+   }
+```
 
+其中，Module._extensions会被赋值给require()的extensions属性，所以通过在代码中访问require.extensions可以知道系统中已有的扩展加载方式。编写如下代码测试一下：
 
+```javascript
+console.log(require.extensions)
+```
+
+得到的执行结果如下：
+
+```javascript
+{
+  '.js': [Function: Module._extensions['.js']],
+  '.json': [Function: Module._extensions['.json']],
+  '.node': [Function: Module._extensions['.node']]
+}
+```
+
+如果想对自定义的扩展名进行特殊的加载，可以通过类似require.extensions['.ext']的方式实现。
+但是从v0.10.6版本(版本还是有点早😂)开始，官方不鼓励通过这种方式来进行自定义扩展名的加载，而是期望先将其他语言或文件编译成JavaScript文件后再加载，这样做的好处在于不将烦琐的编译加载等过程引入Node的执行过程中。
+
+在确定文件的扩展名之后，Node将调用具体的编译方式来将文件执行后返回给调用者。
+
+1、JavaScript文件的编译
+回到CommonJS模块规范，我们知道每个模块文件中存在着require、exports、module这3个变量，但是它们在模块文件中并没有定义，那么从何而来呢？甚至在Node的API文档中，我们知道每个模块中还有__filename、__dirname这两个变量的存在，它们又是从何而来的呢？如果我们把直接定义模块的过程放诸在浏览器端，会存在污染全局变量的情况。
+
+事实上，在编译的过程中，Node对获取的JavaScript文件内容进行了头尾包装。在头部添加了
+(function (exports, require, module, __filename, __dirname) {\n，在尾部添加了\n});。
+一个正常的JavaScript文件会被包装成如下的样子：
+
+```javascript
+(function (exports, require, module, __filename, __dirname) {
+  // 在这里编写模块的代码
+  var a = require('./a');
+  var b = require('./b');
+  exports.sum = a.sum + b.sum;
+
+})(exports, require, module, __filename, __dirname);
+```
 
 
 ## C/C++ 扩展模块
