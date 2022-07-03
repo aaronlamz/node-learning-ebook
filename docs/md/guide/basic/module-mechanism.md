@@ -205,6 +205,15 @@ console.log(require.extensions)
 })(exports, require, module, __filename, __dirname);
 ```
 
+这样每个模块文件之间都进行了作用域隔离。包装之后的代码会通过vm原生模块的runInThisContext()方法执行（类似eval，只是具有明确上下文，不污染全局），返回一个具体的function对象。最后，将当前模块对象的exports属性、require()方法、module（模块对象自身），以及在文件定位中得到的完整文件路径和文件目录作为参数传递给这个function()执行。
+
+这就是这些变量并没有定义在每个模块文件中却存在的原因。在执行之后，模块的exports属性被返回给了调用方。exports属性上的任何方法和属性都可以被外部调用到，但是模块中的其余变量或属性则不可直接被调用。
+
+至此，require、exports、module的流程已经完整，这就是Node对CommonJS模块规范的实现。
+
+2、C/C++ 模块编译
+
+
 ## C/C++ 扩展模块
 
 ## 模块调用栈
