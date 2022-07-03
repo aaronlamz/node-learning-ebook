@@ -171,10 +171,15 @@ console.log(require.extensions)
 得到的执行结果如下：
 
 ```javascript
-{
-  '.js': [Function: Module._extensions['.js']],
-  '.json': [Function: Module._extensions['.json']],
-  '.node': [Function: Module._extensions['.node']]
+[Function: require] {
+  resolve: [Function: resolve] { paths: [Function: paths] },
+  main: undefined,
+  extensions: [Object: null prototype] {
+    '.js': [Function (anonymous)],
+    '.json': [Function (anonymous)],
+    '.node': [Function (anonymous)]
+  },
+  cache: [Object: null prototype] {}
 }
 ```
 
@@ -197,10 +202,8 @@ console.log(require.extensions)
   exports.add = function (a, b) {
     return a + b;
   }
-
 })(exports, require, module, __filename, __dirname);
 ```
-
 
 ## C/C++ 扩展模块
 
