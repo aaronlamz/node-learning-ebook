@@ -193,9 +193,10 @@ console.log(require.extensions)
 ```javascript
 (function (exports, require, module, __filename, __dirname) {
   // 在这里编写模块的代码
-  var a = require('./a');
-  var b = require('./b');
-  exports.sum = a.sum + b.sum;
+  var math = require('math');
+  exports.add = function (a, b) {
+    return a + b;
+  }
 
 })(exports, require, module, __filename, __dirname);
 ```
