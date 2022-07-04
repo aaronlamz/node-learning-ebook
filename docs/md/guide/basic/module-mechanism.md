@@ -233,6 +233,7 @@ Node调用process.dlopen()方法进行加载和执行。在Node的架构下，dl
 Node采用了V8附带的js2c.py工具，将所有内置的JavaScript代码（src/node.js和lib/*.js）转换成C++ node_native_module.h头文件。
 在这个过程中，JavaScript代码以字符串的形式存储在node命名空间中，是不可直接执行的。在启动Node进程时，JavaScript代码直接加载进内存中。在加载的过程中，JavaScript核心模块经历标识符分析后直接定位到内存中，比普通的文件模块从磁盘中一处一处查找要快很多。
 
+2、
 ### C/C++核心模块编译过程
 
 ## C/C++ 扩展模块
@@ -243,5 +244,5 @@ Node采用了V8附带的js2c.py工具，将所有内置的JavaScript代码（src
 
 
 ## 参考链接
-[《深入浅出Node.js》](https://m.ituring.com.cn/book/1290)
-[node_native_module.h](https://github.com/nodejs/node/blob/main/src/node_native_module.h)
+* [《深入浅出Node.js》](https://m.ituring.com.cn/book/1290)
+* [node_native_module.h](https://github.com/nodejs/node/blob/main/src/node_native_module.h)
