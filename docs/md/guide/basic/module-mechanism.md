@@ -222,19 +222,34 @@ Node调用process.dlopen()方法进行加载和执行。在Node的架构下，dl
 .json文件的编译是3种编译方式中最简单的。Node利用fs模块同步读取JSON文件的内容之后，调用JSON.parse()方法得到对象，然后将它赋给模块对象的exports，以供外部调用。
 
 ## 核心模块
-前面提到，Node的核心模块在编译成可执行文件的过程中被编译进了二进制文件。核心模块其实分为C/C++编写的和JavaScript编写的两部分，其中C/C++文件存放在Node项目的src目录下，JavaScript文件存放在lib目录下。如下图所示：
+前面提到，Node的核心模块在编译成可执行文件的过程中被编译进了二进制文件。核心模块其实分为C/C++编写的和JavaScript编写的两部分，其中C/C++文件存放在Node项目的src目录下，JavaScript文件存放在lib目录下。如下图github目录所示：
 
 <div align="center"><img src="~@img/node_structure.png"></div>
 
-### JavaScript核心模块编译过程
+### JavaScript 核心模块编译过程
 
-1、 转存为C/C++代码
+1、转存为 C/C++ 代码
 
-Node采用了V8附带的js2c.py工具，将所有内置的JavaScript代码（src/node.js和lib/*.js）转换成C++ node_native_module.h头文件。
-在这个过程中，JavaScript代码以字符串的形式存储在node命名空间中，是不可直接执行的。在启动Node进程时，JavaScript代码直接加载进内存中。在加载的过程中，JavaScript核心模块经历标识符分析后直接定位到内存中，比普通的文件模块从磁盘中一处一处查找要快很多。
+Node采用了V8附带的js2c.py工具，将所有内置的 JavaScript 代码（src/node.js和lib/*.js）转换成C++ node_native_module.h头文件。
+在这个过程中，JavaScript 代码以字符串的形式存储在node命名空间中，是不可直接执行的。在启动 Node 进程时，JavaScript 代码直接加载进内存中。在加载的过程中，JavaScript 核心模块经历标识符分析后直接定位到内存中，比普通的文件模块从磁盘中一处一处查找要快很多。
 
-2、
-### C/C++核心模块编译过程
+2、编译 JavaScript 核心模块
+
+lib目录下的所有模块文件也没有定义require、module、exports这些变量。在引入JavaScript核心模块的过程中，也经历了头尾包装的过程，然后才执行和导出了exports对象。与文件模块有区别的地方在于：获取源代码的方式（核心模块是从内存中加载的）以及缓存执行结果的位置。
+
+JavaScript 核心模块的定义如下面的代码所示，源文件通过process.binding('natives')取出，编译成功的模块缓存到NativeModule._cache对象上，文件模块则缓存到Module._cache对象上：
+```javascript
+  function NativeModule(id) {
+    this.id = id;
+    this.filename = id + '.js';
+    this.exports = {};
+    this.loaded = false;
+    this.loading = false;
+    NativeModule._source = process.binding('natives');
+    NativeModule._cache = {};
+  }
+```
+### C/C++ 核心模块编译过程
 
 ## C/C++ 扩展模块
 
