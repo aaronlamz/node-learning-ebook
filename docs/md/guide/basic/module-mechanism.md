@@ -222,6 +222,11 @@ Node调用process.dlopen()方法进行加载和执行。在Node的架构下，dl
 .json文件的编译是3种编译方式中最简单的。Node利用fs模块同步读取JSON文件的内容之后，调用JSON.parse()方法得到对象，然后将它赋给模块对象的exports，以供外部调用。
 
 ## 核心模块
+前面提到，Node的核心模块在编译成可执行文件的过程中被编译进了二进制文件。核心模块其实分为C/C++编写的和JavaScript编写的两部分，其中C/C++文件存放在Node项目的src目录下，JavaScript文件存放在lib目录下。如下图所示：
+
+<div align="center"><img src="~@img/node_structure.png"></div>
+
+
 ## C/C++ 扩展模块
 
 ## 模块调用栈
