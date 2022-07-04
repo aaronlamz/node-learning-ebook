@@ -221,6 +221,7 @@ Node调用process.dlopen()方法进行加载和执行。在Node的架构下，dl
 
 .json文件的编译是3种编译方式中最简单的。Node利用fs模块同步读取JSON文件的内容之后，调用JSON.parse()方法得到对象，然后将它赋给模块对象的exports，以供外部调用。
 
+## 核心模块
 ## C/C++ 扩展模块
 
 ## 模块调用栈
