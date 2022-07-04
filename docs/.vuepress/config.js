@@ -15,6 +15,7 @@ module.exports = {
       { text: '指南', link: '/md/guide/basic/node-intro' },
       { text: '面试', link: '/md/interview/' },
       { text: '关于', link: '/md/about/' },
+      { text: '仓库', link: 'https://github.com/aaronlamz/node-learning-ebook' },
     ],
     sidebar: {
       '/md/guide/': [
