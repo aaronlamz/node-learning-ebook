@@ -212,11 +212,13 @@ console.log(require.extensions)
 至此，require、exports、module的流程已经完整，这就是Node对CommonJS模块规范的实现。
 
 2、C/C++ 模块编译
+
 Node调用process.dlopen()方法进行加载和执行。在Node的架构下，dlopen()方法在Windows和*nix平台下分别有不同的实现，通过libuv兼容层进行了封装。
 
 实际上，.node的模块文件并不需要编译，因为它是编写C/C++模块之后编译生成的，所以这里只有加载和执行的过程。在执行的过程中，模块的exports对象与．node模块产生联系，然后返回给调用者。C/C++模块给Node使用者带来的优势主要是执行效率方面的，劣势则是C/C++模块的编写门槛比JavaScript高。
 
 3、JSON文件编译
+
 .json文件的编译是3种编译方式中最简单的。Node利用fs模块同步读取JSON文件的内容之后，调用JSON.parse()方法得到对象，然后将它赋给模块对象的exports，以供外部调用。
 
 ## C/C++ 扩展模块
