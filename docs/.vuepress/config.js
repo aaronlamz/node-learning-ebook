@@ -21,19 +21,24 @@ module.exports = {
       '/md/guide/': [
         {
           text: '基础入门',
-          collapsible:true,
+          collapsible:false,
           children: [
             '/md/guide/basic/node-intro.md',
             '/md/guide/basic/basic-principle.md',
             '/md/guide/basic/module-mechanism.md',
-            '/md/guide/basic/file-system.md',
-            '/md/guide/basic/net-dev.md',
+          ],
+        },
+        {
+          text: '系统模块',
+          collapsible:false,
+          children: [
+            '/md/guide/system-module/fs.md',
           ],
         },
         {
           text: '深入理解',
           path:'/md/guide/',
-          collapsible:true,
+          collapsible:false,
           children: [
             '/md/guide/deep/asyn-io.md',
             '/md/guide/deep/memory.md',
@@ -43,7 +48,7 @@ module.exports = {
         {
           text: '调试指南',
           path:'/md/guide/',
-          collapsible:true,
+          collapsible:false,
           children: [
             '/md/guide/debug/README.md'
           ],
@@ -51,7 +56,7 @@ module.exports = {
         {
           text: '实战指南',
           path:'/md/guide/',
-          collapsible:true,
+          collapsible:false,
           children: [
             '/md/guide/practice/README.md'
           ],
