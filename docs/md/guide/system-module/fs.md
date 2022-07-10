@@ -57,8 +57,8 @@ try {
 ## 常用API 
 
 1、fs.accessSync(path[, mode])
-* path <string> | <Buffer> | <URL>
-* mode <integer> 默认值: fs.constants.F_OK
+* path `string` | `Buffer` | `URL`
+* mode `integer` 默认值: fs.constants.F_OK
 
 同步地测试用户对 path 指定的文件或目录的权限。 mode 参数是可选的整数，指定要执行的可访问性检查。 mode 应该是值 fs.constants.F_OK 或由 fs.constants.R_OK、fs.constants.W_OK 和 fs.constants.X_OK 中的任何一个（例如 fs.constants.W_OK | fs.constants.R_OK）的按位或组成的掩码。 查看[文件访问的常量](http://nodejs.cn/api/fs.html#file-access-constants)以获取可能的 mode 值。
 
