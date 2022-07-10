@@ -3,7 +3,7 @@
 
 前端常见的构建工具，比如 Webpack、Gulp 等，都会使用文件系统模块来读取文件，并且把文件内容输出到磁盘上。
 
-## 文件系统模块导入
+## 模块导入
 
 node:fs 模块支持以标准 [POSIX](https://www.zhihu.com/question/21048638) 函数建模的方式与文件系统进行交互。
 
@@ -54,7 +54,7 @@ try {
 }
 ```
 
-## 常用API 
+## 常用 API 
 
 1、fs.accessSync(path[, mode])
 * path `string` | `Buffer` | `URL`
@@ -75,10 +75,9 @@ try {
 }
 ```
 
-
 ## 公共对象
 
-## 常用示例代码
+## 示例代码
 
 ## 参考链接
 * [Node.js 中文网 fs](http://nodejs.cn/api/fs.html)
