@@ -54,7 +54,7 @@ try {
 }
 ```
 
-## 常用 API 
+## 常用 API
 
 1、fs.accessSync(path[, mode])
 * path `string` | `Buffer` | `URL`
