@@ -7,6 +7,8 @@
 
 node:fs 模块支持以标准 [POSIX](https://www.zhihu.com/question/21048638) 函数建模的方式与文件系统进行交互。
 
+Node API 支持Promise 异步、同步和回调的形式。来看一个简单的例子：
+
 ```javascript
 // 基于 Node.js 18.4.0 版本 ES6 的文件系统模块
 // 基于 promise 的 API
@@ -55,6 +57,8 @@ try {
 ```
 
 ## 常用 API
+
+> 下面的例子均使用同步API的形式
 
 1、fs.accessSync(path[, mode])
 * path `string` | `Buffer` | `URL`
