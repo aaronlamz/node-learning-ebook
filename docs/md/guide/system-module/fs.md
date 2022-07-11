@@ -75,11 +75,12 @@ try {
 }
 ```
 
+2、
+
 ## 公共对象
 
 ## 示例代码
 
 ## 参考链接
-* [Node.js 中文网 fs](http://nodejs.cn/api/fs.html)
-* [Node.js fs](https://nodejs.org/api/fs.html)
+* [Node.js File System API](https://nodejs.org/api/fs.html)
 * [fs.js 源代码](https://github.com/nodejs/node/blob/v18.4.0/lib/fs.js)
