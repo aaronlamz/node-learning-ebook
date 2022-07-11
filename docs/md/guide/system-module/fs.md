@@ -79,7 +79,15 @@ try {
 }
 ```
 
-2、
+2、fs.copyFileSync(src, dest[, flags])
+* src `string` | `Buffer` | `URL`
+* dest `string` | `Buffer` | `URL`
+* flags `integer` 默认值: 0
+
+
+## FileHandle 类
+FileHandle 对象是一个文件句柄，它可以用来读取、写入、或者删除文件。
+FileHandle 对象的实例通过 fs.open() 或 fs.openFile() 方法创建。
 
 ## 公共对象
 
