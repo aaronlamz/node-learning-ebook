@@ -95,4 +95,5 @@ try {
 
 ## 参考链接
 * [Node.js File System API](https://nodejs.org/api/fs.html)
-* [fs.js 源代码](https://github.com/nodejs/node/blob/v18.4.0/lib/fs.js)
+* [fs源代码](https://github.com/nodejs/node/blob/v18.4.0/lib/fs.js)
+
