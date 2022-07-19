@@ -94,6 +94,6 @@ try {
 ## 示例代码
 
 ## 参考链接
-* [Node.js File System API](https://nodejs.org/dist/latest-v18.x/docs/api/fs.html)
+* [Node.js File System API](https://nodejs.org/api/fs.html)
 * [fs源代码](https://github.com/nodejs/node/blob/v18.4.0/lib/fs.js)
 
