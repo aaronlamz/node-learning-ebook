@@ -1,0 +1,1 @@
+const e={key:"v-37450e64",path:"/md/source-code/express/",title:"Express \u6E90\u7801\u7B14\u8BB0",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1658298415e3,contributors:[{name:"Aaronlamz",email:"qylinxia@qq.com",commits:1}]},filePathRelative:"md/source-code/express/README.md"};export{e as data};
