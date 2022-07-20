@@ -92,13 +92,7 @@ FileHandle 对象的实例通过 fs.open() 或 fs.openFile() 方法创建。
 
 所有 FileHandle 对象都是 EventEmitter
 
-如果 FileHandle 不是使用 filehandle.close() 方法关闭的，则会尝试自动关闭文件描述符并且会抛出异常，避免内存泄漏。但是最好不要依赖这个特性，因为它可能在以后的版本中被移除。
-
-```javascript
-
-```javascript
-
-```javascript
+如果 FileHandle 对象不是使用 filehandle.close() 方法关闭的话，则会尝试自动关闭文件描述符并且会抛出异常，避免内存泄漏。但是最好不要依赖这个特性，因为它可能在以后的版本中被移除。
 
 ## 公共对象
 
