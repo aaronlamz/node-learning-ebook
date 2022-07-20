@@ -86,7 +86,7 @@ try {
 
 
 ## FileHandle 类
-FileHandle 对象是一个文件句柄，它可以用来读取、写入、或者删除文件。
+FileHandle 对象是一个文件描述符的对象包装器，它可以用来读取、写入、或者删除文件。
 
 FileHandle 对象的实例通过 fs.open() 或 fs.openFile() 方法创建。
 
