@@ -58,7 +58,7 @@ try {
 
 ## 常用 API
 
-> 下面的例子均使用同步API的形式
+> 下面的例子均使用同步API的形式，请注意，同步API的返回值为 Promise 对象。
 
 1、fs.accessSync(path[, mode])
 * path `string` | `Buffer` | `URL`
