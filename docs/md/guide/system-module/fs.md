@@ -85,6 +85,12 @@ try {
 * flags `integer` 默认值: 0
 
 
+```javascript
+import { copyFileSync } from 'fs';
+
+copyFileSync('src.txt', 'dest.txt');
+```
+
 ## FileHandle 类
 FileHandle 对象是一个文件描述符的对象包装器，它可以用来读取、写入、或者删除文件。
 
