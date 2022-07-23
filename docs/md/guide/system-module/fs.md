@@ -86,9 +86,14 @@ try {
 
 
 ```javascript
-import { copyFileSync } from 'fs';
+import { copyFileSync, constants } from 'node:fs';
 
-copyFileSync('src.txt', 'dest.txt');
+// destination.txt will be created or overwritten by default.
+copyFileSync('source.txt', 'destination.txt');
+console.log('source.txt was copied to destination.txt');
+
+// By using COPYFILE_EXCL, the operation will fail if destination.txt exists.
+copyFileSync('source.txt', 'destination.txt', constants.COPYFILE_EXCL);
 ```
 
 ## FileHandle 类
