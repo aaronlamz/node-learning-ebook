@@ -84,6 +84,7 @@ try {
 * dest `string` | `Buffer` | `URL`
 * flags `integer` 默认值: 0
 
+同步地将src复制到dest。默认情况下，如果dest已经存在，会被覆盖。返回未定义。Node.js对复制操作的原子性不做任何保证。如果在目标文件被打开写入后发生错误，Node.js将尝试删除目标文件。
 
 ```javascript
 import { copyFileSync, constants } from 'node:fs';
