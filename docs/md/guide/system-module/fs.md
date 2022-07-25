@@ -108,6 +108,7 @@ FileHandle 对象的实例通过 fs.open() 或 fs.openFile() 方法创建。
 
 ## 公共对象
 
+
 ## 常用示例
 
 ## 参考链接
