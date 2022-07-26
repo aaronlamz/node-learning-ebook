@@ -64,6 +64,15 @@ module.exports = {
           ],
         },
       ],
+      '/md/interview/': [
+        {
+          text: '面试指南',
+          collapsible:false,
+          children: [
+            '/md/interview/README.md',
+          ],
+        },
+      ]
     }
   },
   alias: {
