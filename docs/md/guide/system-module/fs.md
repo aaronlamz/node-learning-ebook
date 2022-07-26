@@ -120,7 +120,7 @@ copyFileSync('source.txt', 'destination.txt', constants.COPYFILE_EXCL);
 
 同步地将整个目录结构从src复制到dest，包括子目录和文件。
 
-当把一个目录复制到另一个目录时，不支持globs，行为类似于cp dir1/ dir2/。
+当把一个目录复制到另一个目录时，不支持[globs](https://blog.logrocket.com/understanding-using-globs-node-js/)，行为类似于cp dir1/ dir2/。
 
 > 其他API，请参见官方文档[File System](https://nodejs.org/api/fs.html#fsexistssyncpath)
 
