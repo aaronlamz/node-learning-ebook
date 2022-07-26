@@ -72,6 +72,7 @@ module.exports = {
           children: [
             '/md/interview/basic/README.md',
             '/md/interview/module/README.md',
+            '/md/interview/event/README.md',
           ],
         },
       ]
