@@ -92,6 +92,19 @@ mode是一个可选的整数，用于指定复制操作的行为。可以创建�
 * fs.constants.COPYFILE_EXCL：如果目标文件已存在，则抛出错误。
 * fs.constants.COPYFILE_FICLONE：复制操作将试图创建一个copy-on-write(写入时复制？)的软连接(reflink)。如果平台不支持copy-on-write方式，那么就会使用后备复制机制。
 
+3、fs.cpSync(src, dest[, options])
+* src `string` | `Buffer` | `URL` 需要复制的源文件路径
+* dest `string` | `Buffer` | `URL` 复制到的目标文件路径
+* options `Object` 默认值: {}
+  * dereference
+  * errorOnExist
+  * filter
+  * force
+  * preserveTimestamps
+  * recursive
+  * verbatimSymlinks
+
+
 ```javascript
 import { copyFileSync, constants } from 'node:fs';
 
