@@ -80,9 +80,9 @@ try {
 ```
 
 2、fs.copyFileSync(src, dest[, flags])
-* src `string` | `Buffer` | `URL`
-* dest `string` | `Buffer` | `URL`
-* flags `integer` 默认值: 0
+* src `string` | `Buffer` | `URL` 需要复制的源文件名称
+* dest `string` | `Buffer` | `URL` 复制到的目标文件名称
+* flags `integer` 默认值: 0 用于复制操作的修饰符。默认值为 0，表示不使用任何修饰符。
 
 同步地将src复制到dest。默认情况下，如果dest已经存在，会被覆盖。返回未定义。Node.js对复制操作的原子性不做任何保证。如果在目标文件被打开写入后发生错误，Node.js将尝试删除目标文件。
 
