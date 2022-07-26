@@ -13,7 +13,7 @@ module.exports = {
     navbar:  [
         { text: '首页', link: '/' },
         { text: '指南', link: '/md/guide/basic/node-intro' },
-        { text: '面试', link: '/md/interview/' },
+        { text: '面试', link: '/md/interview/basic/' },
         { text: '关于', link: '/md/about/' },
         { text: '仓库', link: 'https://github.com/aaronlamz/node-learning-ebook' },
     ],
@@ -67,9 +67,11 @@ module.exports = {
       '/md/interview/': [
         {
           text: '面试指南',
+          path:'',
           collapsible:false,
           children: [
-            '/md/interview/README.md',
+            '/md/interview/basic/README.md',
+            '/md/interview/module/README.md',
           ],
         },
       ]
