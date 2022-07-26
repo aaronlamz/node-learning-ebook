@@ -118,6 +118,11 @@ copyFileSync('source.txt', 'destination.txt', constants.COPYFILE_EXCL);
   * recursive：`boolean` 默认值: false 如果为true，则复制的文件将包含它们的子目录。
   * verbatimSymlinks：`boolean` 默认值: false 如果为true，则复制的文件将包含它们的硬链接。
 
+同步地将整个目录结构从src复制到dest，包括子目录和文件。
+
+当把一个目录复制到另一个目录时，不支持globs，行为类似于cp dir1/ dir2/。
+
+> 其他API，请参见官方文档[File System](https://nodejs.org/api/fs.html#fsexistssyncpath)
 ## FileHandle 类
 FileHandle 对象是一个文件描述符的对象包装器，它可以用来读取、写入、或者删除文件。
 
