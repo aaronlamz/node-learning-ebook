@@ -104,6 +104,9 @@ copyFileSync('source.txt', 'destination.txt', constants.COPYFILE_EXCL);
 ```
 
 3、fs.cpSync(src, dest[, options])
+
+> v16.7.0 版本新增的 API
+
 * src `string` | `Buffer` | `URL` 需要复制的源文件路径
 * dest `string` | `Buffer` | `URL` 复制到的目标文件路径
 * options `Object` 默认值: {}
