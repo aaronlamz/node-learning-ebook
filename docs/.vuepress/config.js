@@ -32,7 +32,9 @@ module.exports = {
           text: '系统模块',
           collapsible:false,
           children: [
+            '/md/guide/system-module/globals.md',
             '/md/guide/system-module/fs.md',
+            '/md/guide/system-module/buffer.md',
           ],
         },
         {
