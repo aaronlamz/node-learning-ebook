@@ -110,13 +110,13 @@ copyFileSync('source.txt', 'destination.txt', constants.COPYFILE_EXCL);
 * src `string` | `Buffer` | `URL` 需要复制的源文件路径
 * dest `string` | `Buffer` | `URL` 复制到的目标文件路径
 * options `Object` 默认值: {}
-  * dereference
-  * errorOnExist
-  * filter
-  * force
-  * preserveTimestamps
-  * recursive
-  * verbatimSymlinks
+  * dereference：`boolean` 默认值: false 如果为true，则复制的文件将包含它们的硬链接。
+  * errorOnExist：`boolean` 默认值: false 如果为true，则复制的文件将会覆盖目标文件。
+  * filter：`function` 默认值: null 如果提供了这个参数，则只复制过滤器返回true的文件。
+  * force：`boolean` 默认值: false 如果为true，则复制的文件将会覆盖目标文件。
+  * preserveTimestamps：`boolean` 默认值: false 如果为true，则复制的文件将保持原有的时间戳。
+  * recursive：`boolean` 默认值: false 如果为true，则复制的文件将包含它们的子目录。
+  * verbatimSymlinks：`boolean` 默认值: false 如果为true，则复制的文件将包含它们的硬链接。
 
 ## FileHandle 类
 FileHandle 对象是一个文件描述符的对象包装器，它可以用来读取、写入、或者删除文件。
