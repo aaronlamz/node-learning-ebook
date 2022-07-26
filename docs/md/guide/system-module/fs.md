@@ -92,6 +92,17 @@ mode是一个可选的整数，用于指定复制操作的行为。可以创建�
 * fs.constants.COPYFILE_EXCL：如果目标文件已存在，则抛出错误。
 * fs.constants.COPYFILE_FICLONE：复制操作将试图创建一个copy-on-write(写入时复制？)的软连接(reflink)。如果平台不支持copy-on-write方式，那么就会使用后备复制机制。
 
+```javascript
+import { copyFileSync, constants } from 'node:fs';
+
+// destination.txt will be created or overwritten by default.
+copyFileSync('source.txt', 'destination.txt');
+console.log('source.txt was copied to destination.txt');
+
+// By using COPYFILE_EXCL, the operation will fail if destination.txt exists.
+copyFileSync('source.txt', 'destination.txt', constants.COPYFILE_EXCL);
+```
+
 3、fs.cpSync(src, dest[, options])
 * src `string` | `Buffer` | `URL` 需要复制的源文件路径
 * dest `string` | `Buffer` | `URL` 复制到的目标文件路径
@@ -103,18 +114,6 @@ mode是一个可选的整数，用于指定复制操作的行为。可以创建�
   * preserveTimestamps
   * recursive
   * verbatimSymlinks
-
-
-```javascript
-import { copyFileSync, constants } from 'node:fs';
-
-// destination.txt will be created or overwritten by default.
-copyFileSync('source.txt', 'destination.txt');
-console.log('source.txt was copied to destination.txt');
-
-// By using COPYFILE_EXCL, the operation will fail if destination.txt exists.
-copyFileSync('source.txt', 'destination.txt', constants.COPYFILE_EXCL);
-```
 
 ## FileHandle 类
 FileHandle 对象是一个文件描述符的对象包装器，它可以用来读取、写入、或者删除文件。
