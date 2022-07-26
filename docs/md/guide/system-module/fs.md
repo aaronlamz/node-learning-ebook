@@ -86,6 +86,12 @@ try {
 
 同步地将src复制到dest。默认情况下，如果dest已经存在，会被覆盖。返回未定义。Node.js对复制操作的原子性不做任何保证。如果在目标文件被打开写入后发生错误，Node.js将尝试删除目标文件。
 
+mode是一个可选的整数，用于指定复制操作的行为。可以创建一个由两个或多个值的位数OR组成的掩码（例如：fs.constants.COPYFILE_EXCL | fs.constants.COPYFILE_FICLONE）。
+
+选项说明：
+* fs.constants.COPYFILE_EXCL：如果目标文件已存在，则抛出错误。
+* fs.constants.COPYFILE_FICLONE：
+
 ```javascript
 import { copyFileSync, constants } from 'node:fs';
 
