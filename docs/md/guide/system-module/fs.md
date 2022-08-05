@@ -136,6 +136,7 @@ FileHandle 对象的实例通过 fs.open() 或 fs.openFile() 方法创建。
 ## 通用对象
 所有的文件系统 API 类型（Promise、回调和同步API）都共享这些通用对象。
 
+### fs.Dir 类
 
 
 ## 常用示例
