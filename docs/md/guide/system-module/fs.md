@@ -145,3 +145,4 @@ FileHandle 对象的实例通过 fs.open() 或 fs.openFile() 方法创建。
 * [File System API](https://nodejs.org/api/fs.html)
 * [fs源代码](https://github.com/nodejs/node/blob/v18.4.0/lib/fs.js)
 
+
