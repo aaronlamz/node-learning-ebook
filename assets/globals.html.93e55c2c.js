@@ -1,0 +1,1 @@
+const e={key:"v-582bdea0",path:"/md/guide/system-module/globals.html",title:"\u5168\u5C40\u5BF9\u8C61",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1659785227e3,contributors:[{name:"Aaronlamz",email:"qylinxia@qq.com",commits:1}]},filePathRelative:"md/guide/system-module/globals.md"};export{e as data};

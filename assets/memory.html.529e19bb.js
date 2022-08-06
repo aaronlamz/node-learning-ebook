@@ -1,0 +1,1 @@
+const e={key:"v-10e7d5b2",path:"/md/guide/deep/memory.html",title:"\u5185\u5B58\u7BA1\u7406",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1659785227e3,contributors:[{name:"Aaronlamz",email:"qylinxia@qq.com",commits:1}]},filePathRelative:"md/guide/deep/memory.md"};export{e as data};

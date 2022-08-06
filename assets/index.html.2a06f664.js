@@ -1,0 +1,1 @@
+const e={key:"v-07661ed5",path:"/md/guide/micro-service/",title:"Node.js \u5FAE\u670D\u52A1",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1659785227e3,contributors:[{name:"Aaronlamz",email:"qylinxia@qq.com",commits:1}]},filePathRelative:"md/guide/micro-service/README.md"};export{e as data};

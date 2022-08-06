@@ -1,0 +1,1 @@
+import{o as e,c as o,a,b as t}from"./app.24464b52.js";import{_ as r}from"./plugin-vue_export-helper.21dcd24c.js";const s={},c={id:"koa-\u6307\u5357",tabindex:"-1"},_=a("a",{class:"header-anchor",href:"#koa-\u6307\u5357","aria-hidden":"true"},"#",-1),n=t(" Koa \u6307\u5357"),d=[_,n];function i(h,f){return e(),o("h1",c,d)}var x=r(s,[["render",i]]);export{x as default};

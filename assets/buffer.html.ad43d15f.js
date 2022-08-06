@@ -1,0 +1,1 @@
+const e={key:"v-ac37ee7c",path:"/md/guide/system-module/buffer.html",title:"Buffer \u7F13\u51B2\u5668",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1659785227e3,contributors:[{name:"Aaronlamz",email:"qylinxia@qq.com",commits:1}]},filePathRelative:"md/guide/system-module/buffer.md"};export{e as data};

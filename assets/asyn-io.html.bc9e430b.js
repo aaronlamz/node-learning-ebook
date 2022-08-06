@@ -1,0 +1,1 @@
+const e={key:"v-821e08c4",path:"/md/guide/deep/asyn-io.html",title:"\u5F02\u6B65I/O",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1659785227e3,contributors:[{name:"Aaronlamz",email:"qylinxia@qq.com",commits:1}]},filePathRelative:"md/guide/deep/asyn-io.md"};export{e as data};

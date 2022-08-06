@@ -1,0 +1,1 @@
+const a={key:"v-3ad27ca4",path:"/md/guide/koa/",title:"Koa \u6307\u5357",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1659785227e3,contributors:[{name:"Aaronlamz",email:"qylinxia@qq.com",commits:1}]},filePathRelative:"md/guide/koa/README.md"};export{a as data};

@@ -1,0 +1,1 @@
+const e={key:"v-c4feab88",path:"/md/guide/design-pattern/",title:"Node.js \u8BBE\u8BA1\u6A21\u5F0F",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1659785227e3,contributors:[{name:"Aaronlamz",email:"qylinxia@qq.com",commits:1}]},filePathRelative:"md/guide/design-pattern/README.md"};export{e as data};
