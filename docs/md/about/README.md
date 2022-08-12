@@ -1,2 +1,2 @@
 # About
-Human who codes.
+Human who codes and know nothing.
