@@ -1,4 +1,4 @@
-# 《Node.js 学习指南》
+# Node.js 学习指南
 
 <div align="center">
   <img src="./node.png" width="40%">
