@@ -8,7 +8,7 @@
 </p>
 
 ## 状态
-WIP
+进行中
 
 ## 文档
 [https://aaronlamz.github.io/node-learning-ebook/](https://aaronlamz.github.io/node-learning-ebook/)
